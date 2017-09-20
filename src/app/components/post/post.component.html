@@ -1,9 +1,9 @@
 <div *ngIf="post; else elseBlock">
 	<h3>
-		{{post.title}}
+		Title: {{post.title}}
 	</h3>
 	<p>
-		{{post.body}}	
+		Description: {{post.body}}	
 	</p>
 </div>
 <ng-template #elseBlock>Loading...</ng-template>
@@ -12,10 +12,12 @@
 <ul>
 	<li *ngFor="let comment of comments">
 		<div>
+			<span>User:</span>
 			<span>{{comment.id}}</span>
 			<span>{{comment.email}}</span>
 		</div>
 		<div>
+			<span>Comment:</span>
 			<span>{{comment.body}}</span>
 		</div>
 		<hr>
