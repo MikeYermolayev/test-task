@@ -1,16 +1,37 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
-import { AppComponent } from './app.component';
+import {
+  AppComponent,
+  FeedComponent,
+  PostComponent
+} from './components';
+
+import {
+  ApiService,
+  PostsService
+} from './services/';
+
+import { AppRoutingModule }     from './app-routing.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FeedComponent,
+    PostComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule,
+    NgxDatatableModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+  	ApiService,
+  	PostsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

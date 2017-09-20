@@ -1,0 +1,27 @@
+<div *ngIf="post">
+	<h3>
+		{{post.title}}
+	</h3>
+	<p>
+		{{post.body}}	
+	</p>
+</div>
+<hr>
+<h3>Comments</h3>
+<ul>
+	<li *ngFor="let comment of comments">
+		<div>
+			<span>{{comment.id}}</span>
+			<span>{{comment.email}}</span>
+		</div>
+		<div>
+			<span>{{comment.body}}</span>
+		</div>
+		<hr>
+	</li>
+</ul>
+<br>
+
+<a [routerLink]="['/home']">
+	<span><- Go back</span>
+</a>
