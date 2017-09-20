@@ -1,4 +1,4 @@
-<div *ngIf="post">
+<div *ngIf="post; else elseBlock">
 	<h3>
 		{{post.title}}
 	</h3>
@@ -6,6 +6,7 @@
 		{{post.body}}	
 	</p>
 </div>
+<ng-template #elseBlock>Loading...</ng-template>
 <hr>
 <h3>Comments</h3>
 <ul>
